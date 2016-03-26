@@ -1,0 +1,30 @@
+-*- coding: utf-8 -*-
+
+import os
+# This code has been automatically taylored by the tool Csv manager_ for an specific file. Correct execution requires python interpreter 3.X
+
+def get_files():
+    if os.path.isfile('C:/Users/Carlos/Programming/Python/Csv_Manager'):
+        input_handler = open('C:/Users/Carlos/Programming/Python/Csv_Manager', 'r', encoding="utf-8")
+        output_handler = open(input_handler.name[:-4] + '_transformed.csv', 'w')
+        manage_file(input_handler, output_handler)
+    elif os.path.isdir('C:/Users/Carlos/Programming/Python/Csv_Manager'):
+        for csv in os.listdir('C:/Users/Carlos/Programming/Python/Csv_Manager'):
+            if csv[-4:] != '.csv' or csv[-16:] == '_transformed.csv':
+                continue
+            input_handler = open(csv, 'r', encoding="utf-8")
+            output_handler = open(input_handler.name[:-4] + '_transformed.csv', 'w')
+            manage_file(input_handler, output_handler)
+
+def manage_file(input_handler, output_handler):
+number = 0
+delimiter = ','
+for line in handler:
+    number += 1
+    if number <= 1:
+        continue
+    line = line.rstrip('\n').split(delimiter)
+
+
+
+get_files()

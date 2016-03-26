@@ -1,0 +1,2 @@
+if number == 1:
+            output_handler.write(line + \'\\n\')
